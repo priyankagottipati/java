@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+abstract class A {
+    abstract void draw();
+}
+class B extends A {
+    int n;
+    B(int n) {
+        this.n = n;
+    }
+    public void draw() {
+        System.out.println("Rectangle");
+        System.out.println("The given input is " + n);
+    }
+}
+class C extends A {
+    int n;
+    C(int n) {
+        this.n = n;
+    }
+    public void draw() {
+        System.out.println("Circle");
+        System.out.println("The given input is " + n);
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        A ob = new B(n);  
+        ob.draw();
+        A ob1 = new C(n);
+        ob1.draw();
+    }
+}
